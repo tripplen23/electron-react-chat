@@ -4,7 +4,7 @@ import '../index.scss'
 export default function Register () {
   return (
     <div className="register-wrapper">
-      <form className="register-form">
+      <form className="form-name">
         
         <h1>REGISTER</h1>
 

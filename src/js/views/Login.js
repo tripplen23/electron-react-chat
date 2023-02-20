@@ -3,8 +3,8 @@ import '../index.scss'
 
 export default function Login () {
   return (
-    <div className="login-wrapper">
-      <form className="login-form">
+    <div className="form-wrapper">
+      <form className="form-name">
         
         <h1>LOGIN</h1>
 

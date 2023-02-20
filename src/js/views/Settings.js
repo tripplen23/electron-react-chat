@@ -1,44 +1,45 @@
-import React from "react";
+import React, {useState} from "react";
+import '../index.scss'
 
 export default function Settings () {
+
+  const [isDark,setIsDark] = useState(false);
+  const [isNotiEnable,setIsNotiEnable] = useState(false);
+  const [isNotiSound,setIsNotiSound] = useState(false);
+
   return (
-    <div className="centered-view">
-      <div className="centered-container">
-        <form className="centered-container-form">
-          <div className="header">Adjust application settings</div>
-          <button type="button">Notify Me</button>
-          <div className="form-container">
-            <div className="my-3">
-              <div className="form-check">
-                <input
-                  name="isDarkTheme"
-                  type="checkbox"
-                  className="form-check-input" />
-                <label className="form-check-label">Dark Theme</label>
-              </div>
-              <div className="form-check">
-                <input
-                  name="showNotifications"
-                  type="checkbox"
-                  className="form-check-input" />
-                <label className="form-check-label">Enable Notification</label>
-              </div>
-              <div className="form-check">
-                <input
-                  name="playSound"
-                  type="checkbox"
-                  className="form-check-input" />
-                <label className="form-check-label">Sound notification</label>
-              </div>
-            </div>
-            <button
-              type="button"
-              onClick={() => {}}
-              className="btn btn-danger">
-              Quit App
-            </button>
-          </div>
-        </form>
+    <div className="settings-wrapper">
+      <div className="form-name">
+        <h1>
+          SETTINGS
+        </h1>
+        <div className="setting-buttons">
+          <div className="setting">
+              <label for="theme">
+                Dark Theme
+              </label>
+              <input type="checkbox" id="switch" checked={isDark ? true : false} />
+              <label onClick={()=>setIsDark(isDark => !isDark)} className="switch-label">Toggle</label>
+          </div>  
+          <div className="setting">
+              <label for="noti-enable">
+                Enable Notification
+              </label>
+              <input type="checkbox" id="switch" checked={isNotiEnable ? true : false} />
+              <label onClick={()=>setIsNotiEnable(isNotiEnable => !isNotiEnable)} className="switch-label">Toggle</label>
+          </div>  
+          <div className="setting">
+              <label for="sound-noti">
+                Sound Notification
+              </label>
+              <input type="checkbox" id="switch" checked={isNotiSound ? true: false} />
+              <label className="switch-label" onClick={()=>setIsNotiSound(isNotiSound => !isNotiSound)}>Toggle</label>
+          </div> 
+        </div>
+
+        <button className="small-button">
+          SAVE
+        </button>
       </div>
     </div>
   )
